@@ -15,27 +15,39 @@ include __DIR__ . '/Model/db.php';
 </head>
 
 <body>
-    <main>
-        <?php foreach ($hotels as $hotel) { ?>
-            <div>
-                <h2>
-                    <?php echo $hotel['name'] ?>
-                </h2>
-                <h6>
-                    <?php echo $hotel['description'] ?>
-                </h6>
-                <p>
-                    <?php echo 'Voto: ' . $hotel['vote'] ?>
-                </p>
-                <p>
-                    <?php echo 'Distanza dal centro: ' . $hotel['vote'] . 'km' ?>
-                </p>
-                <p>
-                    <?php echo 'Parcheggio: ' . $hotel['parking'] ?>
-
-                </p>
-            </div>
-        <?php } ?>
+    <main class="container">
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Hotel</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Distance to center</th>
+                    <th scope="col">Parking</th>
+                    <th scope="col">Vote</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($hotels as $hotel) { ?>
+                    <tr>
+                        <td scope="row">
+                            <?php echo $hotel['name'] ?>
+                        </td>
+                        <td>
+                            <?php echo $hotel['description'] . '!' ?>
+                        </td>
+                        <td>
+                            <?php echo $hotel['vote'] . 'km' ?>
+                        </td>
+                        <td>
+                            <?php echo $hotel['parking'] ? 'Parcheggio Incluso' : 'Parcheggio Non Incluso' ?>
+                        </td>
+                        <td>
+                            <?php echo $hotel['vote'] . '/5' ?>
+                        </td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
     </main>
 </body>
 
