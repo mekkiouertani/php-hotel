@@ -1,5 +1,6 @@
 <?php
-
+include __DIR__ . '/Model/db.php';
+//var_dump($hotels);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +15,28 @@
 </head>
 
 <body>
+    <main>
+        <?php foreach ($hotels as $hotel) { ?>
+            <div>
+                <h2>
+                    <?php echo $hotel['name'] ?>
+                </h2>
+                <h6>
+                    <?php echo $hotel['description'] ?>
+                </h6>
+                <p>
+                    <?php echo 'Voto: ' . $hotel['vote'] ?>
+                </p>
+                <p>
+                    <?php echo 'Distanza dal centro: ' . $hotel['vote'] . 'km' ?>
+                </p>
+                <p>
+                    <?php echo 'Parcheggio: ' . $hotel['parking'] ?>
 
+                </p>
+            </div>
+        <?php } ?>
+    </main>
 </body>
 
 </html>
