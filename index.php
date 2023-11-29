@@ -15,7 +15,27 @@ include __DIR__ . '/Model/db.php';
 </head>
 
 <body>
-    <main class="container">
+
+    <header class="container">
+        <form action="index.php" method="GET">
+            <select name="parking" id="parking">
+                <option value="all">All</option>
+                <option value="0">Parcheggio Non Incluso</option>
+                <option value="1">Parcheggio Incluso</option>
+            </select>
+            <select name="vote" id="vote">
+                <option value="all">All</option>
+                <option value="1">1 stella</option>
+                <option value="2">2 stelle</option>
+                <option value="3">3 stelle</option>
+                <option value="4">4 stelle</option>
+                <option value="5">5 stelle</option>
+            </select>
+            <button type="submit">Cerca</button>
+        </form>
+    </header>
+
+    <main class="container mt-5">
         <table class="table table-dark">
             <thead>
                 <tr>
