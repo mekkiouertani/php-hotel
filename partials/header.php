@@ -12,23 +12,23 @@
 
 <body>
 
-    <header class="container">
+    <header class="container mt-5">
         <form action="index.php" method="GET">
-            <select name="parking" id="parking">
-                <option value="all">All</option>
+            <select name="parking" id="parking" class="form-select">
+                <option value="all">Con o Senza Parcheggio</option>
                 <option value="0">Parcheggio Non Incluso
                 </option>
                 <option value="1">Parcheggio Incluso
                 </option>
             </select>
-            <select name="vote" id="vote">
-                <option value="all">All</option>
+            <select name="vote" id="vote" class="form-select mt-3">
+                <option value="all">Filtra per Voto</option>
                 <option value="1">1 stella</option>
                 <option value="2">2 stelle</option>
                 <option value="3">3 stelle</option>
                 <option value="4">4 stelle</option>
                 <option value="5">5 stelle</option>
             </select>
-            <button type="submit">Cerca</button>
+            <button type="submit" class="btn btn-primary mt-3">Cerca</button>
         </form>
     </header>
